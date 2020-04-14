@@ -42,6 +42,12 @@ jupyter:
     name: Install Jupyter
     kind: boolean
 
+useGPU:
+  value: false
+  wizard:
+    name: Enable GPU in Jupyter
+    kind: boolean
+
 tensorboard:
   value: false
   wizard:

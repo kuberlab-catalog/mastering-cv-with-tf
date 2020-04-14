@@ -111,9 +111,15 @@ spec:
       cpu: "kuberlab/tensorflow:cpu-27-{{.tensorflow_version.value}}-full"
     {{- end }}
     resources:
+      accelerators:
+      {{- if .useGPU.value }}
+        gpu: 1
+      {{- else }}
+        gpu: 0
+      {{- end }}
       requests:
-        cpu: 100m
-        memory: 64Mi
+        cpu: 500m
+        memory: 256Mi
       limits:
         cpu: 1000m
         memory: 4Gi
